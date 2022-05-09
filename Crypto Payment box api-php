@@ -1,0 +1,22 @@
+// Remove all the characters from the string other than a..Z0..9_-@.
+	$orderID = preg_replace('/[^A-Za-z0-9\.\_\-\@]/', '', $orderID);
+	$userID = preg_replace('/[^A-Za-z0-9\.\_\-\@]/', '', $userID);
+
+	// All Default Configuration variables
+	$options = array(
+			"public_key"  => "",
+			"private_key" => "",
+			"orderID"     => $orderID,
+			"userID"	  => $userID,	// optional
+			"userFormat"  => "COOKIE", 	// SESSION, IPADDRESS
+			"amount"      => 0,
+			"amountUSD"   => 0,
+			"period"      => "",	// 2 HOUR, 1 DAY, 1 MONTH, NOEXPIRY, etc..
+			"iframeID"    => "",	// optional
+			"language"    => "EN"
+	);
+
+	// Initialise Payment Class
+	$box1 = new Cryptobox ($options);
+	... ...
+?>
